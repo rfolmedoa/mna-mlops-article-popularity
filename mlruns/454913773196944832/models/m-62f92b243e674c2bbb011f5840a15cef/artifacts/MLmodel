@@ -1,0 +1,22 @@
+artifact_path: file:///C:/Users/betoa/Documents/TEC/MLOPS/Gits/Fase2/MLOps_Equipo_63/mlruns/454913773196944832/models/m-62f92b243e674c2bbb011f5840a15cef/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.12
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.7.2
+mlflow_version: 3.5.1
+model_id: m-62f92b243e674c2bbb011f5840a15cef
+model_size_bytes: 10175851
+model_uuid: m-62f92b243e674c2bbb011f5840a15cef
+prompts: null
+run_id: 7361ece8238c41ae978e2a886f07345d
+utc_time_created: '2025-11-01 18:06:19.468876'

@@ -1,0 +1,8 @@
+{
+  "classifier": "XGBoost",
+  "xgb_n_estimators": 797,
+  "xgb_learning_rate": 0.010036754424866755,
+  "xgb_max_depth": 7,
+  "xgb_subsample": 0.7817479257090242,
+  "xgb_colsample": 0.6032289623300041
+}
