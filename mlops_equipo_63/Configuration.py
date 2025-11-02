@@ -9,7 +9,7 @@ class Config:
     pos_label_threshold: int = 1400
     test_size: float = 0.2
     random_state: int = 42
-    n_trials: int = 30
+    n_trials: int = 20
     cv_folds: int = 5
     study_name: str = "fase2_optuna_study"
     mlflow_experiment: str = "Equipo63_Fase2"
