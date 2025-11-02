@@ -1,0 +1,66 @@
+schema: '2.0'
+stages:
+  train:
+    cmd: python train.py
+    deps:
+    - path: data/raw/online_news_modified.csv
+      hash: md5
+      md5: 378efec5965400e8af2d93f1e79bf811
+      size: 22660806
+    - path: mlops_equipo_63/Configuration.py
+      hash: md5
+      md5: 53cc3e21edc7d01c6bc83dd798430e9d
+      size: 658
+    - path: mlops_equipo_63/Optuna_Study.py
+      hash: md5
+      md5: f34b458d3767aa9ab488055d193aae34
+      size: 6247
+    - path: mlops_equipo_63/Retrain_and_Evaluate.py
+      hash: md5
+      md5: ca3cb3cf0bd86293186ec359343e1874
+      size: 8933
+    - path: mlops_equipo_63/Split_and_Dummy.py
+      hash: md5
+      md5: f76d9013d74db5e2697abd8c5f060acd
+      size: 3394
+    - path: mlops_equipo_63/__init__.py
+      hash: md5
+      md5: 6fcdfd812be17827855318b1dd9b18f1
+      size: 1239
+    - path: mlops_equipo_63/load_and_preparation.py
+      hash: md5
+      md5: b2815293df74ecc186d10dbc432ebd25
+      size: 2836
+    - path: mlops_equipo_63/mlflow_utils.py
+      hash: md5
+      md5: 4f2d2de6a54118c0d7086b6b28cdbe3e
+      size: 820
+    - path: params.yaml
+      hash: md5
+      md5: c63638367b368822452bb313a67ac000
+      size: 281
+    - path: train.py
+      hash: md5
+      md5: 84cc789759ddfc6208407159cc3cf300
+      size: 1975
+    outs:
+    - path: data/processed/dataset_processed.csv
+      hash: md5
+      md5: 94396283718516431ab1c18c05f46e5a
+      size: 20128970
+    - path: models/final_model.pkl
+      hash: md5
+      md5: 220b51dcdb537e328d5baaba6a9e035d
+      size: 342810146
+    - path: reports/confusion_matrix.png
+      hash: md5
+      md5: 3219df2fceddab9210a2b1cbfc7a6ad6
+      size: 22549
+    - path: reports/feature_importance.png
+      hash: md5
+      md5: e25397ac8f87175ea018cd095c536fe9
+      size: 49558
+    - path: reports/metrics.json
+      hash: md5
+      md5: d68644e3ed10497c1b2056b73668408c
+      size: 305
