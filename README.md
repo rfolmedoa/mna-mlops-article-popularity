@@ -1,4 +1,46 @@
-# MLOps Equipo 63
+# Predicción de popularidad de una publicación​
+
+<img src="docs\images\logo_tec.png" alt="Logo Tecnológico de Monterrey" width="300"/>
+
+# Maestría en Inteligencia Artificial Aplicada  
+## Curso: Operaciones de Aprendizaje Automático
+#### **Profesor Titular: Dr. Gerardo Rodríguez Hernández**  
+#### **Prof Tutor: Iván Reyes Amezcua**
+
+**Nombres y matrículas:**
+| Nombre Completo | Matrícula |
+| :-------------- | :-------- |
+| Jhamyr Arnulfo Alcalde Oballe | A01795401 |
+| Alberto Aquino Mendoza | A01796857 |
+| Diego Andres Bernal Diaz | A01795975 |
+| Rafael Fernando Olmedo Aguilar | A01796862 |
+| Carlos Leopoldo Velasco Bautista | A01796699 |
+
+**Equipo: 63**
+-----
+
+### El Problema:​
+Mashable, un líder en noticias digitales, enfrenta un desafío clave: una gran desproporción entre el alto volumen de artículos que publica y los pocos que logran volverse virales. Esta impredictibilidad conduce a una asignación de recursos (tiempo y presupuesto) que no siempre es eficiente.​
+
+### La Oportunidad de Negocio:​
+Proponemos transformar la predicción de popularidad en acciones de negocio medibles para:​
+-   Priorizar Contenido: Identificar y destacar artículos con alta probabilidad de éxito antes de publicarlos.​
+-   Optimizar la Inversión: Enfocar los esfuerzos de marketing y promoción únicamente en el contenido de mayor potencial.​
+-   Maximizar el Alcance: Determinar los horarios de publicación más efectivos para cada tipo de noticia.​
+
+### Objetivo
+Clasificar publicaciones como "populares" o "no populares" basándose en el número de shares usando técnicas de ML y mejores prácticas de MLOps.
+
+### Machine Learning Canvas
+<img src="docs\images\Machine Learning Canvas.png" alt="ML Canvas del proyecto" width="1200"/>
+
+-----
+
+<a target="_blank" href="https://cookiecutter-data-science.drivendata.org/">
+    <img src="https://img.shields.io/badge/CCDS-Project%20template-328F97?logo=cookiecutter" />
+</a>
+
+Este proyecto tiene como propósito experimentar de manera práctica cómo se construye, organiza y despliega un sistema de Machine Learning en producción, siguiendo los principios de MLOps.
 
 ### Conda/Pip Environment
 
@@ -115,7 +157,6 @@ El resultado es un folder (mlops_equipo_63) con la siguiente estructura:
     │
     └── __init__.py             <- Makes article-popularity a Python module
 ```
-
 -----
 
 ### Git/GitHub
@@ -238,3 +279,43 @@ Para el versionamiento de los modelos de Machine Learning utilizamos MLflow. Ins
 pip install mlflow
 mlflow server --host 127.0.0.1 --port 8080
 ```
+
+-----
+### Pipeline Automatizado con DVC
+El proyecto utiliza un **pipeline automatizado con DVC (Data Version Control)** para organizar y versionar el flujo completo de Machine Learning, desde la preparación de datos hasta la evaluación de modelos.
+
+**¿Por qué usar DVC?**
+- Permite automatizar todo el proceso de datos y modelos.
+- Garantiza que los resultados sean reproducibles: cualquier persona puede ejecutar el pipeline y obtener exactamente los mismos resultados si los datos y los parámetros no cambian.
+- Facilita el trabajo colaborativo, la trazabilidad y la gestión de versiones en equipo.
+- El archivo `dvc.yaml` define las etapas (stages) clave que se ejecutan automáticamente.
+
+**¿Cómo ejecutar el pipeline?**
+Para ejecutar el pipeline completo y actualizar solo las etapas necesarias, usa:
+
+```bash
+dvc repro
+```
+
+DVC revisa los cambios en datos, scripts y parámetros, y solo ejecuta las etapas que realmente necesitan actualizarse.
+
+**Visualización y trazabilidad**
+
+-   Puedes visualizar el flujo del pipeline con:
+
+```
+dvc dag
+```
+
+-   Todos los archivos generados y versionados por DVC pueden enviarse al almacenamiento remoto (como S3 o Google Drive) con:
+
+```
+dvc push
+```
+
+**Beneficios**
+-   Reproducibilidad garantizada
+-   Versionado y control eficiente de datos/modelos/métricas
+-   Colaboración real y segura
+-   Resultados fácilmente comparables y auditables
+
